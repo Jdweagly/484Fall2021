@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Here is your character data</h1>
+    <p>YOUR CHARACTER'S NAME: {{ name }}  </p>
+    <table border="1">
+        {% for key,value in result.items() %}
+            <tr>
+                <th>
+                    {{ key }}
+                </th>
+
+                <td>
+                    {{ value }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <p>Would you like to make another character?:</p>
+    <ul>
+        <li><a href="/input">YES</a></li>
+        <li><a href="/">NO</a></li>
+    </ul>
+{% endblock %}

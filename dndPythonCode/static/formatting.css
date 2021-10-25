@@ -1,0 +1,38 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+table, th, td {
+ border-collapse: collapse;
+  border: 1px solid black;
+}
+
+td {
+  text-align: left;
+  padding: 15px;
+}
+
+td.leftside {
+  text-align: right;
+  font-weight: bold;
+}
+
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+}
+
+a:active {
+  color: red;
+}
+
+

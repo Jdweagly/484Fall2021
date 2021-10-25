@@ -1,0 +1,16 @@
+<html>
+    <head>
+    <link href="../static/formatting.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='background.css') }}">
+      {% if title %}
+      <title>{{ title }} - Character Generation</title>
+      {% else %}
+      <title>Welcome to Character Generation</title>
+      {% endif %}
+    </head>
+    <body>
+        <div><a href="/">Home</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>
