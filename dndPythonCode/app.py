@@ -8,10 +8,14 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'dndrandomizer'
 
 
-@app.route('/', methods=['GET'])
+@app.route('/index', methods=['GET'])
 def index():
     return render_template('index.html', title='Home')
 
+@app.route('/', methods=['GET', 'POST'])
+def welcomePage():
+    form = InputForm()
+    return render_template('welcomepage.html', title='Welcome Page', form=form)
 
 @app.route('/input', methods=['GET', 'POST'])
 def input():
