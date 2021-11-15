@@ -1,0 +1,31 @@
+/* Images from https://freesvg.org*/
+*{
+    background-color: rgb(255, 98, 130);
+    border-color: black;
+}
+#main{
+    text-align: center;
+    padding: 8.5cm ;
+    padding: white;
+    
+}
+#button{
+    border: 3px solid black;
+    appearance: button;
+    text-decoration: none;
+    color: initial
+}
+#dice{
+    position: absolute;
+    width:25%;
+    height: 25%;
+    top: 8px;
+    left: 16px; 
+}
+#dragon{
+    position: absolute;
+    width:30%;
+    height: 30%;
+    bottom:50%;
+    right: 8px; 
+}
