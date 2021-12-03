@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DnD Randomizer Sign-up</title>
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" type="image/jpg" href="../static/axeDude.svg" >
+        <link rel="stylesheet" href="../static/welcomeCSS.css">
+        <script type="text/javascript" src="signupJS.js"></script>
+    </head>
+    <body>
+    <div id="main">
+        <h1>Please Create Your Accouunt</h1>
+        <h4>Usernames must be between 6-26 characters</h4>
+        <form id="formValidator" method="GET" onsubmit="return formValidator();" action="welcomePage.html" >
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">password</label>
+            <input type="password" id="password" name="password" required><br>
+            <label for="verify">Verify Password</label>
+            <input type="password" id="verify" required> <br>
+            <input type="submit" value="submit">
+        </form>
+        </div>
+    </div>
+    </body>
+</html>
