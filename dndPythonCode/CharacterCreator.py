@@ -1,8 +1,21 @@
 import random
 import json
+import pymongo
+from pymongo import MongoClient
+import certifi
+
+ca = certifi.where()
+
+cluster = MongoClient("mongodb+srv://admin:Password123@coscwebdev.pywpm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", tlsCAFile=ca)
+db = cluster["COSCwebdev"]
+collection = db["test"]
+
+
+
 
 # Global Values In Lists
 Race_Choices = ['Human', 'Half-Elf', 'Elf', 'Dwarf', 'Half-Orc', 'Halfling', 'Tiefling', 'Dragonborn', 'Gnome']
+
 Dwarf_Sub_Race_Choices = ['Hill Dwarf', 'Mountain Dwarf']
 Elf_Sub_Race_Choices = ['High Elf', 'Wood Elf', 'Dark Elf']
 Gnome_Sub_Race_Choices = ['Forrest Gnome', 'Rock Gnome']
