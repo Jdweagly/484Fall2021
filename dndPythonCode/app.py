@@ -1,22 +1,54 @@
-from flask import request
+from flask import request, session, redirect, render_template, url_for
 from flask import Flask, url_for
+from flask_pymongo import PyMongo
 from flask import render_template, redirect
+import bcrypt
 from forms import InputForm
 from CharacterCreator import create_pc
+
+
+
+
+
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'dndrandomizer'
 
+app.config['MONGO_DBNAME'] = 'COSCwebdev'
+app.config['MONGO_URI'] = 'mongodb+srv://admin:Password123@coscwebdev.pywpm.mongodb.net/COSCwebdev?retryWrites=true&w=majority'
 
-@app.route('/index', methods=['GET'])
+mongo = PyMongo(app)
+
+@app.route('/signup', methods=['GET'])
+
+
+
+@app.route('/', methods=['GET'])
 def index():
-    return render_template('index.html', title='Home')
+    if 'username' in session:
+        return render_template('charactergen.html', title='Home')
+    return render_template('index.html', title='index')
 
-@app.route('/', methods=['GET', 'POST'])
+
+@app.route('/welcomepage', methods=['GET', 'POST'])
 def welcomePage():
-    form = InputForm()
-    return render_template('welcomepage.html', title='Welcome Page', form=form)
 
+    if request.method == 'POST':
+
+        users = mongo.db.users
+        exisiting_user = users.find_one({'name' : request.form['username']})
+
+        if exisiting_user is None:
+
+            hashpass = bcrypt.hashpw(request.form['pass'].encode('utf-8'), bcrypt.gensalt())
+
+            print("got this far")
+            users.insert_one({'name': request.form['username'], 'password': hashpass})
+            session['username'] = request.form['username']
+            return redirect(url_for('index'))
+        return 'That username already exists!'
+    return render_template('welcomePage.html')
 @app.route('/input', methods=['GET', 'POST'])
 def input():
     form = InputForm()
