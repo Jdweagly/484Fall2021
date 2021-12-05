@@ -30,6 +30,16 @@ def index():
         return render_template('charactergen.html', title='Home')
     return render_template('index.html', title='index')
 
+@app.route('/login', methods=['POST'])
+def login():
+    users = mongo.db.users
+    userlogin = users.find_one({'name': request.form['username']})
+    if userlogin:
+        if bcrypt.hashpw(request.form['pass'].encode('utf-8'), userlogin['password']) == userlogin['password']:
+            session['username'] = request.form['username']
+            return redirect(url_for('index'))
+    return 'Your Username and Password do not match'
+
 
 @app.route('/welcomepage', methods=['GET', 'POST'])
 def welcomePage():
