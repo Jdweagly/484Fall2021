@@ -27,7 +27,7 @@ mongo = PyMongo(app)
 @app.route('/', methods=['GET'])
 def index():
     if 'username' in session:
-        return render_template('charactergen.html', title='Home')
+        return render_template('charactergen.html', title='Home', user=session['username'])
     return render_template('index.html', title='index')
 
 @app.route('/login', methods=['POST'])

@@ -35,4 +35,15 @@ a:active {
   color: red;
 }
 
+.welcome{
+  line-height: 200px;
+  height: 200px;
+  text-align: center;
+  color: white;
+}
 
+.content{
+
+  height: 200px;
+  color: white;
+}

@@ -8,6 +8,10 @@
     border-color: black;
 }
 
+body{
+    background-color: rgb(255, 98, 130);
+}
+
 #dice{
     position: absolute;
     width:25%;
