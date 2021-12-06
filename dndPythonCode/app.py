@@ -41,6 +41,15 @@ def login():
     return 'Your Username and Password do not match'
 
 
+
+@app.route('/sign_out')
+def sign_out():
+    print("got this far")
+    session.pop('username', None)
+
+    return redirect(url_for('index'))
+
+
 @app.route('/welcomepage', methods=['GET', 'POST'])
 def welcomePage():
 
