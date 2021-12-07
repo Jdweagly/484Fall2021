@@ -13,7 +13,7 @@ body{
 }
 
 #dice{
-    position: absolute;
+    position: absolute; 
     width:25%;
     height: 25%;
     top: 8px;
