@@ -27,12 +27,18 @@ def getNPC(s_s):
         s_c = random.choice(Mountains_NPC)
     return s_c
 
-def main():
+def create_setting():
     selected_race = random.choice(Race_Choices)
-    selected_setting = random.choice(Setting)
-    print("Your Setting: ", selected_setting)
-    print("Your NPC: ")
-    print (json.dumps(CharacterCreator.create_pc(selected_race, getNPC(selected_setting)), indent = 2))
+    selected_setting = random.choice(Setting)    
+    print(getNPC(selected_setting), CharacterCreator.create_pc())
+
+
+
+def main():
+    create_setting()
+    #print("Your Setting: ", selected_setting)
+    #print("Your NPC: ")
+    #print (json.dumps(CharacterCreator.create_pc(selected_race, getNPC(selected_setting)), indent = 2))
     #user = True
     #while user:
         #user_choice = input('Would you like to create a setting?')
