@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+
 <a class="button" href="{{ url_for('sign_out') }}">Log Out</a>
 <div class="welcome">
 
@@ -9,11 +10,13 @@
 
 <div class ="content">
     <h1>Character Generator</h1>
-    <p>Welcome to the character generator.</p>
-    <p>Please choose from the following options:</p>
-    <ul>
-        <li><a href="/input">Enter Data</a></li>
-    </ul>
+    <p id="h2">Welcome to the character generator.</p>
+    <p>Please click the button to begin generating:</p>
+    <div><form  action="{{ url_for('input') }}">
+        <button id="button1" type="submit" >Enter Data</button>
+    </form></div>
+
+
 
 </div>
 

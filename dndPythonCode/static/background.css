@@ -1,10 +1,11 @@
 body {
-  background: no-repeat center center url(https://media.wizards.com/2014/images/dnd/articles/podcast_0918_1.jpg);
+  background-color: rgb(255, 98, 130);
   background-size: cover;
 }
 .main {
   max-width: 600px;
   margin: 0 auto;
-  background: url(https://i.pinimg.com/564x/8f/b0/7d/8fb07d1d8660048cc089a07047e7e77d.jpg);
+  /*background: url(https://i.pinimg.com/564x/8f/b0/7d/8fb07d1d8660048cc089a07047e7e77d.jpg);*/
+  background-color: rgb(255, 98, 130);
   padding: 30px;
 }
