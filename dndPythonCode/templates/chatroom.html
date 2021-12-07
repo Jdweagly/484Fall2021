@@ -39,11 +39,17 @@ https://codeburst.io/building-your-first-chat-application-using-flask-in-7-minut
         e.preventDefault()
         let user_name = $( 'input.username' ).val()
         let user_input = $( 'input.message' ).val()
+        rpc.query({
+          model: 'app.py', //MAKE SURE THIS IS 'flask_app.py'
+          method: 'updateMessages',
+          args: user_name, user_input
+        });
         socket.emit( 'my event', {
           user_name : user_name,
           message : user_input
         } )
         $( 'input.message' ).val( '' ).focus()
+        
       } )
     } )
     socket.on( 'my response', function( msg ) {

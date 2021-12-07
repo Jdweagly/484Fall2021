@@ -124,15 +124,25 @@ def villain():
 
 @app.route('/chatroom', methods=['GET'])
 def sessions():
-    return render_template('chatroom.html')
-
+    print('sessions function just ran')
+    render_template('chatroom.html')
+    chatMessages = mongo.db.chatMessages
+    chatMessages.insert_one({'message': "request form does not work"})
+    return render_template('chatroom.html', user=session['username'])
+def updateMessages(name, message):
+    print("Update method worked")
 def messageReceived(methods=['GET', 'POST']):
     print('message was received!!!')
 socketio = SocketIO(app)
 @socketio.on('my event')
 def handle_my_custom_event(json, methods=['GET', 'POST']):
-    print('received my event: ' + str(json))
+    chatMessages = mongo.db.chatMessages
+    str1 = str(json)
+    ##chatMessages.insert_one({'message': str1})
+    chatMessages.insert_one({'message': request.form['message']})
+    print('received my event: ' + str1)
     socketio.emit('my response', json, callback=messageReceived)
+    
 
 if __name__ == '__main__':
     socketio.run(app, debug=True)
