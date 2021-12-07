@@ -4,36 +4,40 @@
 
 {% block content %}
 <html>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 <head>
     <title>DnD Randomizer</title>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" type="image/jpg" href="../static/axeDude.svg" >
+
     <link rel="stylesheet" href="../static/welcomeCSS.css">
 </head>
 <body> 
-    <div id="dice">
-        <img src="../static/diceSVG.svg" alt="dodecahedron die" ></img>
-    </div>  
+
     <div id="main" >
         <h1><b>Welcome to the DnD Randomizer</b></h1>
-        <h3>To Start Randomizing Press the Button Below</h3
-    <div id="form">
-    <form id="login" action= "GET" href=index>
+        <h3>To Start Randomizing Press the Button Below</h3>
+<div class="signup-form">
+    <div class="form-outline mb-4">
+    <form method=POST action="{{ url_for('welcomePage') }}">
         <label for="username">Username</label>
-        <input type="text" id="username" name="username" required><br>
-        <label for="password">password</label>
-        <input type="password" id="password" name="password" required><br>
-        <input type="submit" value="submit">
+
+        <input type="username" name ="username" id="form2Example17" class="form-control form-control-lg" required><br>
+
+        <label for="password">Password</label>
+
+        <input type="password" name = "pass" id="form2Example17" class="form-control form-control-lg" required><br>
+
+         <button type="submit"  class="btn btn-dark btn-lg btn-block"> Register</button>
+
+
     </form>
     </div>
-    <a href="loginPage.html" id="loginLink">Click here to sign-up</button></a><br>
-    <a href=index><button name="button">Continue as guest</button></a></p>
-     <a href=index><button name="button">Continue</button></a></p>
+</div>
+
 
     </div>
-    <div id= dragon>
-        <img src="../static/SlayingTheDragon.svg" alt="man standing on dragon" ></img>
-    </div>
+
 </body>
 
 </html>

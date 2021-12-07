@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<a class="button" href="{{ url_for('sign_out') }}">Log Out</a>
+<div class="welcome">
+
+    <h1>Welcome: {{user}}</h1>
+
+</div>
+
+<div class ="content">
+    <h1>Character Generator</h1>
+    <p>Welcome to the character generator.</p>
+    <p>Please choose from the following options:</p>
+    <ul>
+        <li><a href="/input">Enter Data</a></li>
+    </ul>
+
+</div>
+
+{% endblock %}
