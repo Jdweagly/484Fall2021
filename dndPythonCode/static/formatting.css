@@ -28,7 +28,7 @@ a:visited {
 }
 
 a:hover {
-  color: red;
+  color: rgb(102,1,102);
 }
 
 a:active {
@@ -39,11 +39,30 @@ a:active {
   line-height: 200px;
   height: 200px;
   text-align: center;
-  color: white;
+  color: black;
+}
+#h2{
+    font-size: x-large;
+}
+#button1{
+    background-color: #e7e7e7;
+    color:black;
+    padding: 24px 12px;
+    border: 2px solid #555555;
+    transition-duration: 0.4s;
+}
+#button1:hover{
+    background-color: rgb(63,63,63);
 }
 
 .content{
+    text-align: center;
+    padding: 1cm ;
+    border-color: black;
+    height: 200px;
 
-  height: 200px;
-  color: white;
+}
+.inputMain{
+    text-align:center;
+    font-size: x-large;
 }
