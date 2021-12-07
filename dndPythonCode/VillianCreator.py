@@ -432,7 +432,8 @@ def create_Villan():
 
 
 def main():
-    print (json.dumps(create_Villan(), indent = 2))
+    print(create_Villan())
+    #print (json.dumps(create_Villan(), indent = 2))
     #user = True
     #while user:
         #user_choice = input('Would you like to create a villan?')
